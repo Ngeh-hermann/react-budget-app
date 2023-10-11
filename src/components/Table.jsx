@@ -1,18 +1,19 @@
 import ExpenseItem from "./ExpenseItem"
 
 /* eslint-disable react/prop-types */
-const Table = ({ expenses }) => {
+const Table = ({ expenses, showBudget = true }) => {
     return (
         <div className="table">
             <table>
                 <thead>
                     <tr>
                         {
-                            ["Name", "Amount", "Date"].map((i, index) => (
-                                <th key={index}>
-                                    {i}
-                                </th>
-                            ))
+                            ["Name", "Amount", "Date",
+                                showBudget ? "Budget" : "",].map((i, index) => (
+                                    <th key={index}>
+                                        {i}
+                                    </th>
+                                ))
                         }
                     </tr>
                 </thead>
@@ -20,7 +21,7 @@ const Table = ({ expenses }) => {
                     {
                         expenses.map((expense) => (
                             <tr key={expense.id}>
-                                <ExpenseItem expense={expense} />
+                                <ExpenseItem expense={expense} showBudget={showBudget} />
                             </tr>
                         ))
                     }
