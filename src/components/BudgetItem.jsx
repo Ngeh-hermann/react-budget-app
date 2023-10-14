@@ -31,7 +31,7 @@ const BudgetItem = ({ budget, showDelete = false }) => {
                 showDelete ? (
                     <div className="flex-sm">
                         <Form method="post" action="delete" onSubmit={(event) => {
-                            if (!confirm("Are you sure you want to permenently delte this budget?")) {
+                            if (!confirm("Are you sure you want to permenently delete this budget?")) {
                                 event.preventDefault();
                             }
                         }}>

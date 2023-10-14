@@ -92,6 +92,6 @@ export const formatPercentage = (amount) => {
 export const formatCurrency = (amount) => {
   return amount.toLocaleString(undefined, {
     style: "currency",
-    currency: "USD",
+    currency: "XAF",
   });
 };
